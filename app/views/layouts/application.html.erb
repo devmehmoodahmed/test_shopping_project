@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to 'Cart', cart_path, class: 'cart-button' %></li>
+      <%= link_to 'Products List', products_path, class: 'cart-button' %>
+    </nav>
     <%= yield %>
   </body>
 </html>

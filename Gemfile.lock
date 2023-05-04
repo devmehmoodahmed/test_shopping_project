@@ -275,6 +275,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
   rspec-rails (~> 5.0.0)
+  rubocop
   rubocop-airbnb
   selenium-webdriver
   sprockets-rails

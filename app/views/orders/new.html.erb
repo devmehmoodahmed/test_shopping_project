@@ -1,0 +1,29 @@
+<div class="d-flex items-center justify-content-center h-screen">
+  <div class="w-full max-w-md">
+    <h2 class="text-center text-2xl font-bold mb-4">Add details to place your Order</h2>
+    <%= form_for @order do |f| %>
+      <div style="margin-bottom: 5px;">
+        <%= f.label :customer_name, class: "block text-gray-700 font-bold mb-2" %>
+        <%= f.text_field :customer_name, placeholder: "Enter your name", class: "form-input block w-full" %>
+      </div>
+
+      <div style="margin-bottom: 5px;">
+        <%= f.label :shipping_address, class: "block text-gray-700 font-bold mb-2" %>
+        <%= f.text_area :shipping_address, placeholder: "Enter your address", class: "form-textarea block w-full" %>
+      </div>
+
+      <div style="margin-bottom: 5px;">
+        <%= f.label :phone_number, class: "block text-gray-700 font-bold mb-2" %>
+        <%= f.text_field :phone_number, placeholder: "Enter your phone number", class: "form-input block w-full" %>
+      </div>
+
+      <div style="margin-bottom: 5px;">
+        <%= f.label :payment_method, class: "block text-gray-700 font-bold mb-2" %>
+       <%= f.select :payment_method, options_for_select([["Credit Card", "credit_card"], ["PayPal", "paypal"], ["Apple Pay", "apple_pay"], ["Google Pay", "google_pay"], ["Venmo", "venmo"]]), {}, { class: "form-select block w-full" } %>
+
+      </div>
+
+      <%= f.submit "Place Order", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded block mx-auto" %>
+    <% end %>
+  </div>
+</div>

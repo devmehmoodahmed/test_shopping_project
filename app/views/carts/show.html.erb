@@ -1,0 +1,26 @@
+<h1>Shopping Cart</h1>
+<% if @cart_items.any? %>
+
+  <ul>
+    <% @cart_items.each do |item| %>
+      <li>
+        <div class="item-info">
+          <div class="item-name"><%= item.product.name %></div>
+          <%= form_for item, url: cart_path, method: :put, class: "item-form" do |f| %>
+            <%= f.number_field :quantity, value: item.quantity, min: 1, class: "quantity-field" %>
+            <%= f.hidden_field :id, value: item.id %>
+            <%= f.submit "+", class: "plus-button" %>
+            <%= f.submit "-", class: "minus-button" %>
+          <% end %>
+        </div>
+        <div class="item-price"><%= number_to_currency(item.product.price * item.quantity) %></div>
+        <%= button_to 'Remove from Cart', cart_path(id: item.id), method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="confirm-order-container">
+    <%= link_to 'Confirm Order', new_order_path, class: "confirm-order-button" %>
+  </div>
+<% else %>
+  <p>Please add items to your cart!</p>
+<% end %>
