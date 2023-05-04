@@ -1,0 +1,15 @@
+<h1 class="title">Products</h1>
+
+<div class="product-list">
+  <% @products.each do |product| %>
+    <div class="product-item">
+    <% if product.image.present? %>
+      <%= image_tag product.image, class: "product-image" %>
+    <% end %>
+      <h2><%= product.name %></h2>
+      <p class="description"><%= product.description %></p>
+      <p class="price"><%= number_to_currency(product.price) %></p>
+      <%= link_to 'View Details', product_path(product), class: "button" %>
+    </div>
+  <% end %>
+</div>
