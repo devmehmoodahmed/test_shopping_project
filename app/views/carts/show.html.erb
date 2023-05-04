@@ -1,6 +1,6 @@
 <h1>Shopping Cart</h1>
-
 <% if @cart_items.any? %>
+
   <ul>
     <% @cart_items.each do |item| %>
       <li>
@@ -14,13 +14,13 @@
           <% end %>
         </div>
         <div class="item-price"><%= number_to_currency(item.product.price * item.quantity) %></div>
+        <%= button_to 'Remove from Cart', cart_path(id: item.id), method: :delete %>
       </li>
-    <%= button_to 'Empty Cart', cart_path(id: item.id), method: :delete %>
     <% end %>
-
   </ul>
+  <div class="confirm-order-container">
+    <%= link_to 'Confirm Order', new_order_path, class: "confirm-order-button" %>
+  </div>
 <% else %>
   <p>Please add items to your cart!</p>
 <% end %>
-
- 

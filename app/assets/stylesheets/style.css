@@ -223,3 +223,27 @@ body {
   margin-right: 10px;
   float: right;
 }
+
+.confirm-order-button {
+background-color: #22bb33;
+color: white;
+border: none;
+padding: 10px;
+border-radius: 5px;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+  
