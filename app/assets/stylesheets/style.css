@@ -141,3 +141,85 @@ body {
   .back-link:hover {
     background-color: #155e8a;
   }
+
+  .item-form .plus-button,
+.item-form .minus-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.item-form .plus-button::before {
+  content: "+";
+}
+
+.item-form .minus-button::before {
+  content: "-";
+}
+
+.item-form .plus-button:hover::before,
+.item-form .minus-button:hover::before {
+  font-size: 1.2em;
+}
+
+.item-form .quantity-field {
+  display: inline-block;
+  width: 4em;
+  text-align: center;
+  margin: 0 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.item-form .item-name {
+  display: inline-block;
+  width: 30%;
+  vertical-align: middle;
+}
+
+.item-form .item-price {
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.item-form .item-info {
+  display: inline-block;
+  width: 50%;
+}
+
+.total {
+  text-align: right;
+  margin-top: 1em;
+}
+
+.empty-button {
+  display: block;
+  margin-top: 1em;
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.empty-button:hover {
+  background-color: #d00;
+}
+
+.cart-button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+  float: right;
+}
